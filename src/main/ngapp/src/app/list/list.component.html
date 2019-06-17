@@ -1,0 +1,46 @@
+<div style="padding: 20px;">
+<h1 style="text-align: center">Nouveau Collaborateur</h1>
+<table mat-table class="mat-elevation-z8" [dataSource]="dataSource" style="width: 100%;">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef style="width: 60px;"> # </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="label">
+    <th mat-header-cell *matHeaderCellDef> Libellé </th>
+    <td mat-cell *matCellDef="let element"> {{element.label}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="rh">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Ressources Humaines </th>
+    <td mat-cell *matCellDef="let element" style="width: 120px;text-align: center;">
+      <mat-icon *ngIf="element.rh" style="color:green">check_circle_outline</mat-icon>
+      <mat-icon *ngIf="!element.rh" style="color:red">highlight_off</mat-icon>
+    </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="responsable">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Responsable </th>
+    <td mat-cell *matCellDef="let element" style="width: 120px;text-align: center;">
+      <mat-icon *ngIf="element.responsable" style="color:green">check_circle_outline</mat-icon>
+      <mat-icon *ngIf="!element.responsable" style="color:red">highlight_off</mat-icon>
+    </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="bureautique">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Bureautique </th>
+    <td mat-cell *matCellDef="let element" style="width: 120px;text-align: center;">
+      <mat-icon *ngIf="element.bureautique" style="color:green">check_circle_outline</mat-icon>
+      <mat-icon *ngIf="!element.bureautique" style="color:red">highlight_off</mat-icon>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>

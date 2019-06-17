@@ -1,0 +1,15 @@
+<div style="flex-wrap: wrap;">
+  <mat-card class="card-process" *ngFor="let item of processList">
+    <mat-card-title style="font-size: 19px;text-align: center">{{ item.label }}</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <button  routerLink="/list" mat-raised-button style="width:100%" matBadge="{{ item.notifications }}" matBadgePosition="before" matBadgeColor="warn">Liste des demandes</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button style="width:100%">Nouvelle demande</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
